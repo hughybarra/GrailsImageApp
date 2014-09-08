@@ -1,0 +1,11 @@
+.mainContianer .dataDiv {
+  height: 150px;
+}
+.mainContianer .deleteButton {
+  margin-top: 50px;
+}
+.mainContianer img {
+  margin-top: 15px;
+  height: 120px;
+  width: 120px;
+}
