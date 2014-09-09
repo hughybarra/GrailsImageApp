@@ -7,5 +7,6 @@ class Users {
 	String password
 	
     static constraints = {
+    	email unique: true
     }
 }

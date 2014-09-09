@@ -27,8 +27,6 @@
 		<!-- END CSS -->
 
 
-
-
 		<!-- TEMPLATE HEADER DATA HERE -->
 		<g:layoutHead/>
 	</head>
@@ -44,11 +42,26 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar=collapse-1">
 
 				<ul class="nav navbar-nav">
-					<li><a href="addImage"><span class="glyphicon glyphicon-open"></span> Add Images</a></li>
+					<li><a href="http://localhost:8080/hyImageApp/addImage"><span class="glyphicon glyphicon-open"></span> Add Images</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav pull-right">
-					<li class="pull-right"><a href="/hyImageApp/login">Login</a></li>
+					%{-- Check if the user is logged in switch--}%
+					<g:if test="${session['loggedIn']}">
+
+
+						<li class="pull-right"><a href="/hyImageApp/login/logout"> Logout</a></li>
+
+						<li class="pull-right"><a href="">Welcome: ${session['userEmail']}</a></li>
+
+
+					</g:if>
+					<g:else>
+						<li class="pull-right"><a href="/hyImageApp/login">Login</a></li>
+					</g:else>
+
+
+			
 				</ul>
 
 			</div>

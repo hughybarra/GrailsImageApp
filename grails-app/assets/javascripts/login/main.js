@@ -58,8 +58,7 @@ $(function(){
 				'email': loginEmail,
 				'password': loginPassword
 			};
-			
-			console.log(data);
+		
 			// save text to the server
 			$.ajax({
 				type: "POST",
@@ -68,6 +67,22 @@ $(function(){
 				dataType: 'json',
 				success: function(success){
 					console.log(success);
+					// redirect to the landing page
+					// window.location.href = "/hyImageApp";
+
+					console.log(success.success);
+
+					if (success.success){
+						// you were logged in
+						window.location.href = '/hyImageApp';
+					}else{
+						// you were not logged in
+						// error message on the secreen
+						var loginError = 
+						'<p class="text-danger">User name or password was incorrect</p>';
+
+						$('.loginForm').prepend(loginError);
+					}
 				},
 			});
 
@@ -88,6 +103,7 @@ $(function(){
 		var signUpEmail = $('#signUpEmail').val();
 		var signUpPassword1 = $('#signUpPassword1').val();
 		var signUpPassword2 = $('#signUpPassword2').val();
+		var loginValid = true;
 
 		console.log(signUpEmail);
 		console.log(signUpPassword1);
@@ -95,30 +111,85 @@ $(function(){
 
 		/// Email validation 
 		if (signUpEmail){
-			loginValid = false;
 			$('.signUpFgEmail').addClass('has-success');
-			$('.signUpFgEmail').removeClass('has-success');
+			$('.signUpFgEmail').removeClass('has-error');
 		}else{
+			loginValid = false;
 			$('.signUpFgEmail').addClass('has-error');
 			$('.signUpgEmail').removeClass('has-success')
 		}
 		///passowrd 1validation 
 		if (signUpPassword1){
-			loginValid = false;
+			
 			$('.signUpFgPassword1').addClass('has-success');
-			$('.signUpFgPassword1').removeClass('has-success');
+			$('.signUpFgPassword1').removeClass('has-error');
 		}else{
+			loginValid = false;
 			$('.signUpFgPassword1').addClass('has-error');
 			$('.signUpFgPassword1').removeClass('has-success')
 		}
 		/// password2 validation 
 		if (signUpPassword2){
-			loginValid = false;
+			
 			$('.signUpFgPassword2').addClass('has-success');
-			$('.signUpFgPassword2').removeClass('has-success');
+			$('.signUpFgPassword2').removeClass('has-error');
 		}else{
+			loginValid = false;
 			$('.signUpFgPassword2').addClass('has-error');
 			$('.signUpFgPassword2').removeClass('has-success')
+		}
+
+		if (signUpPassword1 != signUpPassword2){
+			loginValid = false;
+			// add error classes 
+			$('.signUpFgPassword2').addClass('has-error');
+			$('.signUpFgPassword2').removeClass('has-success')
+			$('.signUpFgPassword1').addClass('has-error');
+			$('.signUpFgPassword1').removeClass('has-success')
+		}
+
+		if (loginValid){
+			console.log('ajaxing into logMeIn');
+
+			// place text into new object
+			var ajaxUrl = 'login/attemptSignUp';
+			// var ajaxUrl = 'testing/update'
+
+			// building new ajax object
+			var data = {
+				'email': signUpEmail,
+				'password': signUpPassword2
+			};
+		
+			// save text to the server
+			$.ajax({
+				type: "POST",
+				url: ajaxUrl,
+				data: data,
+				dataType: 'json',
+				success: function(success){
+					console.log(success);
+					
+					if (success.success){
+
+						$('.dangerDiv').empty(); 
+						// you created a new user
+						// redirect to the landing page
+						window.location.href = "/hyImageApp";
+					}else{
+						// user name already exists
+						$('.dangerDiv').empty();
+						var loginError = 
+						'<div class="dangerDiv">'+
+						'<p class="text-danger">User Name Already Exists</p>'+
+						'</div>';
+						$('.signUpForm').prepend(loginError);
+					}
+				}
+
+			});
+		}else{
+			console.log('form was not valid');
 		}
 
 

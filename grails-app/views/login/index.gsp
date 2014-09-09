@@ -10,7 +10,8 @@
 
 		<section class="mainContainer">
 
-			<form role="form" class="col-lg-3 col-lg-offset-3" >
+			<form role="form" class="col-lg-3 col-lg-offset-3 loginForm" >
+
 
 				<h3> Login </h3>
 				<div class="form-group loginFgEmail">
@@ -28,7 +29,7 @@
 			</form>
 
 
-			<form role="form" class="col-lg-3 ">
+			<form role="form" class="col-lg-3 signUpForm">
 
 				<h3>Sign Up</h3>
 
@@ -47,6 +48,7 @@
 				</div>
 
 				<div class="btn btn-default signUpButton">Sign UP </div>
+
 			</form>
 
 		</section>
