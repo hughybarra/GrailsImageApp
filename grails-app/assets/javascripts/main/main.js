@@ -39,7 +39,6 @@ $(function(){
 			};
 
 			img.src = data.url;
-
 		};
 
 		var imageLoad = function(data){
@@ -56,10 +55,7 @@ $(function(){
 		}
 
 		var imageError = function(data){
-			console.log('======');
-			console.log(data);
-			console.log('bad iamge');
-			console.log('======');
+			// the image would not load so delete the image from the database
 		}
 
 		var imageExists;

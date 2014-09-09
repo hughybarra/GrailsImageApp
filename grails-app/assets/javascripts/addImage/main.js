@@ -12,6 +12,40 @@
 $(function() {
 
 	/*
+	*Check Login 
+	*Function checksif the user is logged in
+	*/
+	var checkLogin = function(){
+		var ajaxUrl = '/hyImageApp/login/checkLogin';
+
+		// get all image assets from the server
+		$.ajax({
+			type: "GET",
+			url: ajaxUrl,
+			dataType: 'json',
+			success: function(success){
+
+				if (success.success == 'true'){
+					// user is logged in
+					// do some stuff here
+					$('.mainContainer').removeClass('hideContainer');
+				}else{
+					// user is not logged in
+
+					// redirect to the main page
+					window.location.href = '/hyImageApp/login';
+				}
+			},
+		})
+	}// end check login function
+
+	checkLogin();
+
+
+
+
+
+	/*
 	*This function checks the url provided to see if an image actually exists
 	*/
 	var checkImage = function(url, callback){

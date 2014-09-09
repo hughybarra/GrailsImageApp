@@ -50,7 +50,7 @@
 					<g:if test="${session['loggedIn']}">
 
 
-						<li class="pull-right"><a href="/hyImageApp/login/logout"> Logout</a></li>
+						<li class="pull-right"><a href="/hyImageApp/authentication/logout"> Logout</a></li>
 
 						<li class="pull-right"><a href="">Welcome: ${session['userEmail']}</a></li>
 

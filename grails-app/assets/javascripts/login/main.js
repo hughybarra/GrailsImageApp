@@ -13,6 +13,9 @@
 // anon function
 $(function(){
 
+	var attemptLogin = function(email, password){
+
+	};// end attempt login function
 
 	// login 
 	$('.loginButton').click(function(){
@@ -50,7 +53,7 @@ $(function(){
 			console.log('ajaxing into logMeIn');
 
 			// place text into new object
-			var ajaxUrl = 'login/attemptLogin';
+			var ajaxUrl = 'authentication/login'
 			// var ajaxUrl = 'testing/update'
 
 			// building new ajax object
@@ -152,7 +155,8 @@ $(function(){
 			console.log('ajaxing into logMeIn');
 
 			// place text into new object
-			var ajaxUrl = 'login/attemptSignUp';
+			// var ajaxUrl = 'login/attemptSignUp';
+			var ajaxUrl = 'authentication/signUp';
 			// var ajaxUrl = 'testing/update'
 
 			// building new ajax object
@@ -174,8 +178,31 @@ $(function(){
 
 						$('.dangerDiv').empty(); 
 						// you created a new user
-						// redirect to the landing page
-						window.location.href = "/hyImageApp";
+						// place text into new object
+						var ajaxUrl = 'authentication/login';
+						// var ajaxUrl = 'testing/update'
+						// save text to the server
+						$.ajax({
+							type: "POST",
+							url: ajaxUrl,
+							data: data,
+							dataType: 'json',
+							success: function(success){
+								console.log(success);
+
+								if (success.success){
+									// you were logged in
+									window.location.href = '/hyImageApp';
+								}else{
+									// you were not logged in
+									// error message on the secreen
+									var loginError = 
+									'<p class="text-danger">User name or password was incorrect</p>';
+
+									$('.loginForm').prepend(loginError);
+								}
+							},
+						});/// end ajax call
 					}else{
 						// user name already exists
 						$('.dangerDiv').empty();

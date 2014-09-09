@@ -7,6 +7,8 @@ class LoginController{
 
 	}
 
+	def LoginService
+
 	def logout(){
 		// Kill the current session
 		session.invalidate()
@@ -104,11 +106,19 @@ class LoginController{
 
 	def checkLogin(){
 
+		String success;
+
+		if (session['loggedIn'] == null){
+			success = 'false'
+		}else{
+			success = 'true'
+		}
+
 		def data = [
-			'loggedIn': session['loggedIn'],
-			'email': session['email']
+			'success': success
 		]
 
+		// return session successs
 		render data as JSON
 	}
 }
