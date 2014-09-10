@@ -18,7 +18,7 @@ Instead of using some of the free software available on the web I wanted to buil
 
 I'm a huge Reddit and IMGUR fan so I based the style and design off of their website.
 
-Originally I started building the site using AngularJS and the [firebase](https://www.firebase.com) back end. I wanted to get some practice using Angular and I always like working with firebase because it makes the front end development go a lot faster. 
+Originally I started building the site using [AngularJS](https://angularjs.org/) and the [firebase](https://www.firebase.com) back end. I wanted to get some practice using Angular and I always like working with firebase because it makes the front end development go a lot faster. 
 My goal was to build the front end out and then later switch out the firebase with a more secure AJAX and web socket PHP back end. 
 
 ###What it does
