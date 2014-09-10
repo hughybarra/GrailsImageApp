@@ -1,15 +1,14 @@
 #HyImageApp
 
-Hello my name is Hugh Ybarar and your looking at the HyImageApp
+Hello my name is Hugh Ybarra and your looking at the HyImageApp
 
 Technology stack 
 
-Grails 
-Groovy 
-Javascript / Jquery 
-Css / Less 
-
-MongoDB
+*Grails 
+*Groovy 
+*Javascript / Jquery 
+*Css / Less 
+*MongoDB
 
 ###What is it? 
 
