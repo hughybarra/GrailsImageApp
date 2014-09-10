@@ -59,27 +59,6 @@ class LoginService {
 
 	    return success
 	}
-	/*
-	*Checks if the user is logged in
-	*/
-	def checkLogin(String sessionVar){
-
-		// declaring vars
-		String success
-
-		if (sessionVar == null){
-			success ='false'
-		}else{
-			success = 'true'
-		}
-
-		def data = [
-			'success': success
-		]
-
-		// render data as json
-		return data
-	}
 
 	/*
 	*Logs a user in

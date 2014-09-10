@@ -5,28 +5,78 @@ import grails.transaction.Transactional
 @Transactional
 class ImageRestService {
 
-
-
 	/*
 	*Creates a new Image in the database
 	*/
-    def createImage(){
+    def createImage(String email, String url, String title, String caption){
+
+        //declaring vars
+        def valid = false
+        def emailValid = false
+        def urlValid = false
+        def titleValid = false
+        def captionValid = false
+
+        // simple data validation
+
+        if (email == null){
+            emailValid = false
+        }else{
+            emailValid = true
+        }
+
+        if(url == null){
+            urlValid = false
+        }else{
+            urlValid = true
+        }
+
+        if(title == null){
+            titleValid = false
+        }else{
+            titleValid = true
+        }
+
+        if (caption == null){
+            captionValid = false
+        }else{
+            captionValid = true
+        }
+
+        // check if all fields are true
+        if (emailValid && urlValid && titleValid && captionValid){
+            valid = true
+        }else{
+            valid = false
+        }
+
+        if (valid){
+            // convert all strings to lower case except url becuase that breaks urls lol dumbass
+            // WOOOW this caued me so many issues. 
+            caption = caption.toLowerCase()
+            title = title.toLowerCase()
+            email = email.toLowerCase()
+
+            //create new Image 
+
+            def newImage = new ImageContainer()
+            newImage.url = url
+            newImage.caption = caption
+            newImage.title = title
+            newImage.user = email
+
+            // save the new image
+            newImage.save()
+        }
+
+        def data = [
+            'success': valid
+        ]
+
+        return data
 
     }
 
-    /*
-    *Grabs an image based off of id
-    */
-    def getImage(){
-
-    }
-
-    /* 
-    *Grabs all of the images in the database
-    */
-    def getAllImages(){
-
-    }
 
     /*
     *Updates a image based off of id
@@ -38,8 +88,23 @@ class ImageRestService {
     /*
     *Deletes a specific image based off of id.
     */
-    def deleteImage(){
+    def deleteImage(int id){
 
+        // grab item from the database
+        def badImage = ImageContainer.get(id)
+        def success = false
+
+        if(badImage == null){
+            success = 'false'
+        }else{
+            success = 'true'
+        }
+
+        if (success){
+            badImage.delete()
+        }
+
+        return success
     }
 
 }

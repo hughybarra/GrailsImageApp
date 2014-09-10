@@ -12,8 +12,21 @@ class UrlMappings {
 
         // In UrlMappings.groovy
         "/gallery/$id" {
-            controller = 'gallery'
-            action = 'index'
+            controller = 'main'
+            action = 'gallery'
+        }
+
+        '/login'{
+            controller = 'main'
+            action = 'login'
+        }
+        '/addImage'{
+            controller = 'main'
+            action = 'addImage'
+        }
+        '/admin'{
+            controller = 'main'
+            action = 'admin'
         }
 
         

@@ -3,50 +3,38 @@ import grails.converters.JSON
 
 class ImageRestController {
 
+
+	//defining service
+	def ImageRestService
+
+	/*
+	*Create image
+	*Calls Image Rest service to create a new image
+	*/
 	def createImage(){
+		def success = imageRestService.createImage( session['userEmail'], params['url'], params['title'], params['caption'] )
 
+		render success as JSON
 	}
 
-	def getOne(){
-		// def image = ImageContainer.get()
-		// render params as JSON
-	}
-
+	/*
+	*Get all 
+	*Grabs all imags from the Image Container instance 
+	*/
 	def getAll(){
 		def imageList = ImageContainer.getAll()
 		render imageList as JSON
 	}
 
+	/*
+	*Delet Image 
+	* Calls Image rest service to delete image
+	*/
 	def deleteImage(){
 
-		// grab item from the database with provided id
-		def data = ImageContainer.get(params['dataId'])
-		def response = []
-
-		if (data == null){
-
-			response = [
-			'success': 'fail',
-			'message': 'data for id was null'
-			]
-
-		}else{
-			// delete the record 
-			data.delete()
-
-			response = [
-				'success': 'success',
-				'message': 'image remved successfully',
-				'data': data
-			]
-		}
-
-		render response as JSON
-
+		def success = imageRestService.deleteImage(params['dataId'].toInteger())
+		render success as JSON
 
 	}
 
-	def updateImages(){
-
-	}
 }

@@ -12,9 +12,21 @@ class AuthenticationController{
 	*/
 	def checkLogin(){
 
-		def success = loginService.checkLogin(session['loggedIn'])
+		// declaring vars
+		def success = false
+
+		if (session['loggedIn'] == null){
+			success = false
+		}else{
+			success = true
+		}
+
+		def data = [
+			'success': success
+		]
 		// render response as json
-		render success as JSON
+		render data as JSON
+		// render data as JSON
 
 	}
 	def login(){

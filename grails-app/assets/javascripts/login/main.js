@@ -155,9 +155,7 @@ $(function(){
 			console.log('ajaxing into logMeIn');
 
 			// place text into new object
-			// var ajaxUrl = 'login/attemptSignUp';
 			var ajaxUrl = 'authentication/signUp';
-			// var ajaxUrl = 'testing/update'
 
 			// building new ajax object
 			var data = {
@@ -180,7 +178,6 @@ $(function(){
 						// you created a new user
 						// place text into new object
 						var ajaxUrl = 'authentication/login';
-						// var ajaxUrl = 'testing/update'
 						// save text to the server
 						$.ajax({
 							type: "POST",

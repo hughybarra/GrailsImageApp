@@ -19,6 +19,7 @@ $(function(){
 		url: ajaxUrl,
 		dataType: 'json',
 		success: function(success){
+			console.log(success);
 			renderImages(success);
 		},
 	})
@@ -57,8 +58,7 @@ $(function(){
 		var imageError = function(data){
 			// the image would not load so delete the image from the database
 		}
-
-		var imageExists;
+		
 		for(var x = 0; x < images.length; x ++ ){
 
 			checkImage(images[x], function(exists, data){

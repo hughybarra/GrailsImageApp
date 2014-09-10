@@ -16,7 +16,7 @@ $(function() {
 	*Function checksif the user is logged in
 	*/
 	var checkLogin = function(){
-		var ajaxUrl = '/hyImageApp/login/checkLogin';
+		var ajaxUrl = '/hyImageApp/authentication/checkLogin';
 
 		// get all image assets from the server
 		$.ajax({
@@ -24,8 +24,9 @@ $(function() {
 			url: ajaxUrl,
 			dataType: 'json',
 			success: function(success){
+				console.log(success);
 
-				if (success.success == 'true'){
+				if (success.success == true){
 					// user is logged in
 					// do some stuff here
 					$('.mainContainer').removeClass('hideContainer');
@@ -190,8 +191,8 @@ $(function() {
 		// check if the form is valid 
 		// ajax to server
 		if (valid){
-			// place text into new object
-			var ajaxUrl = 'addImage/update';
+			// place text into new object   
+			var ajaxUrl = 'imageRest/createImage';
 			// var ajaxUrl = 'testing/update'
 
 			// building new ajax object
@@ -210,17 +211,15 @@ $(function() {
 				dataType: 'json',
 				success: function(success){
 					console.log(success);
+
+					if (success.success == true){
+						window.location.href = '/hyImageApp';
+					}else{
+						console.log('there was a problem saving your image');
+					}
 				},
 			});
 
-			// clear the form 
-
-			// fade out main content
-			// fade in success spinner
-
-			// redirect to the landing page
-			window.location.href = "/hyImageApp";
-			// window.location = '/';/
 		}
 		//prevent default behavior
 		e.preventDefault();

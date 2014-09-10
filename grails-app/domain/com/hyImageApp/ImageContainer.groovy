@@ -10,7 +10,7 @@ class ImageContainer {
 	String title
 	String caption
 
-	static hasmany = [comments: CommentContainer]
+	static hasMany = [comments: CommentContainer]
 
 
     static constraints = {
