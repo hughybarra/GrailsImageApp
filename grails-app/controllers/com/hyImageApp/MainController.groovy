@@ -32,7 +32,12 @@ class MainController {
 
     def addImage(){}
 
-    def admin(){}
+    def admin(){            
+        if(session['userEmail'] != 'hugh.ybarra@gmail.com'){
+            redirect(action: 'login')
+        }
+
+    }
 
 }
 
