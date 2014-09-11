@@ -40,7 +40,7 @@ $(function() {
 		})
 	}// end check login function
 
-	checkLogin();
+	// checkLogin();
 
 
 

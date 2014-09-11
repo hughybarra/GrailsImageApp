@@ -2,6 +2,18 @@ package com.hyImageApp
 import grails.converters.JSON
 class MainController {
 
+
+    def beforeInterceptor = [action: this.&auth, except: 'login']
+
+    /*
+    *Interceprot checks if user is logged in
+    */
+    private auth(){
+        if(!session['loggedIn']){
+            redirect(action: 'login')
+            return false
+        }
+    }
 	/*
 	*Main Landing Page of the Application
 	*/
@@ -23,3 +35,4 @@ class MainController {
     def admin(){}
 
 }
+

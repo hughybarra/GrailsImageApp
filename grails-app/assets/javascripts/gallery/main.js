@@ -146,7 +146,7 @@ $(function(){
 
 
 	// run check login function
-	checkLogin();
+	// checkLogin();
 	getComments();
 
 });
