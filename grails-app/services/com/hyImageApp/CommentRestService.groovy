@@ -10,6 +10,7 @@ class CommentRestService{
 		def emailValid = false
 		def commentValid = false
 		def valid = false
+		def date = new Date()
 
 
 
@@ -38,7 +39,7 @@ class CommentRestService{
 
 		if(valid){
 			// create new comment object
-			def newComment = new CommentContainer(user: email, comment: comment)
+			def newComment = new CommentContainer(user: email, comment: comment, date: date)
 			// grab image based on id
 			def image = ImageContainer.get(id)
 			// add comment to the image
@@ -60,14 +61,17 @@ class CommentRestService{
 	def getComments(int id){
 		def data = []
 		def response = []
+
+
+        def image = ImageContainer.list(sort:'_id', order: 'desc')
 		// grab comment by image id
-		def image = ImageContainer.get(id)
+		// def image = ImageContainer.get(id)
 		// loop over all of the comments 
 		for (comment in image.comments){
 
 			data.push(comment)
 		}
-		return data
+		return  image.comments
 	}
 
 	def deleteComment(int id){

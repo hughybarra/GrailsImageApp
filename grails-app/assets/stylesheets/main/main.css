@@ -1,6 +1,29 @@
+/*
+*Global Styles 
+*/
+/* Background tile */
+/*
+*Main 
+*/
+/*
+*Gallery
+*/
+body {
+  background-image: url('../../images/random_grey_variations.png');
+  background-repeat: repeat-x repeat-y;
+}
 .imageContainer {
   height: 210px;
 }
 .imageContainer img {
   height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  background-color: rgba(36, 33, 33, 0.7);
+}
+.imageContainer img:hover {
+  background-color: rgba(224, 224, 224, 0.7);
+  border-style: solid;
+  border-width: 2px;
+  border-color: #100f0f;
 }

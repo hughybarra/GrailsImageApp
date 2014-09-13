@@ -1,3 +1,44 @@
+/*
+*Global Styles 
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #c9cdcf;
+}
+/* Background tile */
+/*
+*Main 
+*/
+/*
+*Gallery
+*/
+body {
+  background-image: url('../../images/random_grey_variations.png');
+  background-repeat: repeat-x repeat-y;
+}
+.titleContainer {
+  background-color: rgba(36, 33, 33, 0.7);
+}
 .commentDivEmpty {
   height: 50px;
+}
+.inputPanel {
+  background-color: rgba(36, 33, 33, 0.7);
+}
+.inputPanel form {
+  margin-top: 10px;
+}
+.commentsPanel {
+  background-color: rgba(36, 33, 33, 0.7);
+}
+.userComment {
+  margin-top: 20px;
+}
+.feature_about {
+  margin-top: 10px;
 }

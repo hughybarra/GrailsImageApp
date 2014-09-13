@@ -34,7 +34,7 @@ class MainController {
 
     def admin(){            
         if(session['userEmail'] != 'hugh.ybarra@gmail.com'){
-            redirect(action: 'login')
+            redirect(action: 'index')
         }
 
     }

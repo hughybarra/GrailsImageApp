@@ -38,6 +38,7 @@ class ImageRestController {
 	def deleteImage(){
 
 		def success = imageRestService.deleteImage(params['dataId'].toInteger())
+		
 		render success as JSON
 
 	}

@@ -15,6 +15,29 @@ big
 
 New Image view css file
 */
+/*
+*Global Styles 
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #c9cdcf;
+}
+/* Background tile */
+body {
+  background-image: url('../../images/random_grey_variations.png');
+  background-repeat: repeat-x repeat-y;
+}
+/*
+*Main 
+*/
+/*
+*Gallery / addImage
+*/
 .mainContainer {
   margin-top: 50px;
 }
@@ -26,4 +49,16 @@ New Image view css file
 }
 .hideForm {
   display: none;
+}
+#urlForm label {
+  color: #c9cdcf;
+}
+.newImageContainer {
+  background-color: rgba(36, 33, 33, 0.7);
+}
+.newImageContainer .panel-heading {
+  background-color: rgba(36, 33, 33, 0.7);
+}
+.newImageContainer p {
+  margin-top: 10px;
 }

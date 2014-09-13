@@ -14,7 +14,10 @@ big
 @contact hugh.ybarra@gmail.com
 
 New Image view css file
-*/                     
+*/     
+
+// import css dependencies
+@import '../dependencies';                
 
 
 .mainContainer {
@@ -33,5 +36,23 @@ New Image view css file
 	display: none;
 }
 
+#urlForm{
+	label{
+		color: @fontColor;
+	}
+}
+
+
+.newImageContainer{
+	background-color: @containerBackground;
+
+	.panel-heading{
+		background-color: @containerBackground;
+	}
+
+	p {
+		margin-top: 10px;
+	}
+}
 
 

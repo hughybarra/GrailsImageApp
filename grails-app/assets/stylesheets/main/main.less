@@ -1,13 +1,45 @@
+/* 
+███╗   ███╗ █████╗ ██╗███╗   ██╗
+████╗ ████║██╔══██╗██║████╗  ██║
+██╔████╔██║███████║██║██╔██╗ ██║
+██║╚██╔╝██║██╔══██║██║██║╚██╗██║
+██║ ╚═╝ ██║██║  ██║██║██║ ╚████║
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
+                                                                                                                                                         
+@author Hugh Ybarra
+@contact hugh.ybarra@gmail.com
+
+Main View Css File
+*/ 
+@import '../dependencies';
 
 
-.mainContainer{
 
+body {
+	background-image: @backgroundTile;
+	background-repeat: repeat-x repeat-y;
 }
 
 .imageContainer{
 	height: 210px;
+	
 	// display: none;
 	img{
 		height: 200px;
+		width: 200px;
+		margin: 0 auto;
+		background-color: @imageBackgroundColor;
+
 	}
+
+	img:hover{
+		background-color: @imageBackgroundHover;
+		border-style: solid;
+    	border-width: 2px;
+    	border-color: @imageBorderColor;
+	}
+
+
+
+
 }

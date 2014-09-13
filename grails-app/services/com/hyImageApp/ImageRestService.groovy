@@ -91,6 +91,7 @@ class ImageRestService {
     */
     def deleteImage(int id){
 
+
         // grab item from the database
         def badImage = ImageContainer.get(id)
         def success = false

@@ -9,6 +9,7 @@ class ImageContainer {
 	String url
 	String title
 	String caption
+	Date date
 
 	static hasMany = [comments: CommentContainer]
 

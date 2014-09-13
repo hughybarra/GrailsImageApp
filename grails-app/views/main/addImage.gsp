@@ -98,9 +98,9 @@
 			
 
 			<!-- Display Content div -->
-			<div class="col-lg-5 col-lg-offset-1 newImageContainer">
+			<div class="col-lg-5 col-lg-offset-1 ">
 
-				<div class="panel panel-default">
+				<div class="panel panel-default newImageContainer">
 
 					<div class="panel panel-heading">
 						<h3 class="panelTitleText">Form Title</h3>
@@ -108,7 +108,8 @@
 
 					<div class="panel-body">
 
-						<img src="http://www.hdwallpapers8.com/wp-content/uploads/2014/02/WaterFall-HD-Wallpapers-Background.jpg" class="new_image img-thumbnail img-responsive col-lg-12" id="imagePreview">
+						<img src="${assetPath(src: 'placeholder.jpg')}" id="imagePreview" class="new_image img-thumbnail img-responsive">
+						%{-- <img src="http://www.hdwallpapers8.com/wp-content/uploads/2014/02/WaterFall-HD-Wallpapers-Background.jpg" class="new_image img-thumbnail img-responsive col-lg-12" id="imagePreview"> --}%
 
 						<p class="panelCaptionText">Image Caption</p>
 					</div>

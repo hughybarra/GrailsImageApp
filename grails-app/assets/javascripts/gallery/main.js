@@ -20,12 +20,14 @@ $(function(){
 		var commentPanel = $('.commentsPanel');
 		commentPanel.empty();
 
-		for(var x = 0; x < comments.length; x ++){
+
+		console.log(comments);
+		for(var x = 0; x < comments[0].length; x ++){
 
 			var commentDiv = 
-				'<div class="panel panel-default">'+
+				'<div class="userComment panel panel-default">'+
 				 	'<div class="panel-body">'+
-				    	'<span>'+comments[x].user+'</span><p>'+comments[x].comment+'</p>'+
+				    	'<span>'+comments[0][x].user+'</span><p>'+comments[0][x].comment+'</p>'+
 				  	'</div>'+
 				'</div>';
 
@@ -51,6 +53,7 @@ $(function(){
 			dataType: 'json',
 			data: data,
 			success: function(success){
+				// console.log(success[0][0]);
 				// if data exists in comments
 				if (success){
 					// user is logged in
@@ -94,7 +97,7 @@ $(function(){
 				dataType: 'json',
 				data: data,
 				success: function(success){
-
+					console.log(success);
 					if (success.success == true){
 						// reset the form
 

@@ -11,7 +11,7 @@
 
 		<div class="mainContainer hideContainer">
 
-			<div class="panel panel-default col-lg-6 col-lg-offset-2 ">
+			<div class="titleContainer panel panel-default col-lg-6 col-lg-offset-2 ">
 				<div class="col-lg-12 feature_title">
 					<h3>${image.title}</h3>
 				</div>
@@ -24,7 +24,7 @@
 
 			</div>
 
-			<div class="panel-default panel col-lg-6 col-lg-offset-2">
+			<div class="inputPanel panel-default panel col-lg-6 col-lg-offset-2">
 
 
 
@@ -44,13 +44,8 @@
 
 			<div class="panel panel-default col-lg-6 col-lg-offset-2 commentsPanel">
 
-				<div class="panel panel-default">
-				 	<div class="panel-body">
-				    	<span>user</span><p>Basic panel example</p>
-				  	</div>
-				</div>
-				
 
+		
 			</div>
 
 		</div>

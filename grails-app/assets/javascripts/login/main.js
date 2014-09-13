@@ -75,10 +75,14 @@ $(function(){
 						// you were logged in
 						window.location.href = '/hyImageApp';
 					}else{
+
+						$('.errorContainer').empty();
 						// you were not logged in
 						// error message on the secreen
 						var loginError = 
-						'<p class="text-danger">User name or password was incorrect</p>';
+						'<div class="errorContainer">'+
+						'<p class="text-danger">User name or password was incorrect</p>'+
+						'</div>';
 
 						$('.loginForm').prepend(loginError);
 					}
