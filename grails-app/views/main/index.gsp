@@ -8,15 +8,14 @@
 	</head>
 	<body>
 
-		<section class="Imagesection">
+
+		<section class="Imagesection col-lg-12">
 
 			<div class="imageDiv col-lg-12">
 			</div>
 
 		</section>
 
-
-		<g:applyLayout name="footer" />
 		<!-- main.js -->
 		<asset:javascript src="main/main.js"/>
 	</body>

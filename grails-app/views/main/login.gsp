@@ -8,6 +8,14 @@
 	</head>
 	<body>
 
+
+		<div class="jumbotron">
+			<div class="text-center">
+				<h1>ImageApp</h1>
+				<p>Login or sign up to start sharing images</p>
+			</div>
+		</div>
+
 		<section class="mainContainer">
 
 			<form role="form" class="col-lg-3 col-lg-offset-3 loginForm" >
@@ -53,8 +61,6 @@
 
 		</section>
 
-
-		<g:applyLayout name="footer" />
 		<!-- main.js -->
 		<asset:javascript src="login/main.js"/>
 	</body>

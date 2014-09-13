@@ -8,7 +8,7 @@ class ImageRestService {
 	/*
 	*Creates a new Image in the database
 	*/
-    def createImage(String email, String url, String title, String caption){
+    def createImage(String email, String url, String title, String caption, Date date){
 
         //declaring vars
         def valid = false
@@ -64,6 +64,7 @@ class ImageRestService {
             newImage.caption = caption
             newImage.title = title
             newImage.user = email
+            newImage.date = date
 
             // save the new image
             newImage.save()
@@ -93,6 +94,7 @@ class ImageRestService {
         // grab item from the database
         def badImage = ImageContainer.get(id)
         def success = false
+        def data = []
 
         if(badImage == null){
             success = 'false'
@@ -104,7 +106,11 @@ class ImageRestService {
             badImage.delete()
         }
 
-        return success
+        data = [
+            'success': success
+        ]
+
+        return data
     }
 
 }

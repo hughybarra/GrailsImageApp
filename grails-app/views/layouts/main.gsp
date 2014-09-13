@@ -26,6 +26,15 @@
 
 		<!-- END CSS -->
 
+		<!-- JAVASCRIPT -->
+		<!-- JQuery Distribution -->
+		<asset:javascript src="jquery-1.11.1.min.js"/>
+		<!-- bootstrap javascript dist -->
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+		<!-- END JAVASCRIPT -->
+
 
 		<!-- TEMPLATE HEADER DATA HERE -->
 		<g:layoutHead/>
@@ -33,41 +42,43 @@
 	<body>
 
 
-		<nav class="nav navbar-default">
+		<nav class="navbar navbar-inverse" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
 				<a class="navbar-brand" href="/hyImageApp">Image App</a>
 			</div>
 
-			<!-- collect the nav links, froms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar=collapse-1">
 
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="http://localhost:8080/hyImageApp/addImage"><span class="glyphicon glyphicon-open"></span> Add Images</a></li>
+					<li class=""><a href="http://localhost:8080/hyImageApp/addImage"><span class="glyphicon glyphicon-open"></span> Add Images</a></li>
 				</ul>
 
-				<ul class="nav navbar-nav pull-right">
+				<ul class="nav navbar-nav navbar-right">
 					%{-- Check if the user is logged in switch--}%
 					<g:if test="${session['loggedIn']}">
-
-
-						<li class="pull-right"><a href="/hyImageApp/authentication/logout"> Logout</a></li>
-
-						<li class="pull-right"><a href="">Welcome: ${session['userEmail']}</a></li>
-
-
+						<li class=""><a href="">Welcome: ${session['userEmail']}</a></li>
+						<li class=""><a href="/hyImageApp/authentication/logout"> Logout</a></li>
+						
 					</g:if>
 					<g:else>
-						<li class="pull-right"><a href="/hyImageApp/login">Login</a></li>
+						<li class=""><a href="/hyImageApp/login">Login</a></li>
 					</g:else>
 
-
-			
 				</ul>
-
-			</div>
+			</div><!-- /.navbar-collapse -->
 		</nav>
 
-		<g:layoutBody/>
+		<div class="container-fluid">
+			<g:layoutBody/>
+		</div>
 
 
 	</body>

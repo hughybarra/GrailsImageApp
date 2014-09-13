@@ -33,7 +33,9 @@ $(function(){
 			// depending on whether the image at "url" exists or not.
 			var img = new Image();
 			img.onload = function() { 
-				callback(true, data); 
+				callback(true, data);
+				test = true
+				return test 
 			};
 			img.onerror = function() { 
 				callback(false, data); 
@@ -49,8 +51,7 @@ $(function(){
 					'<a href="'+linkUrl+data.id+'"><img src="'+data.url+'" class="img-responsive "></a>'+
 				'</div>'
 				;
-
-			// append the iamges to the div
+			
 			$('.imageDiv').append(imageContainer);
 
 		}
@@ -58,19 +59,27 @@ $(function(){
 		var imageError = function(data){
 			// the image would not load so delete the image from the database
 		}
-		
+
+		/*
+		*Loop over all of the images
+		*Load every image
+		*Create HTML img tag for each image
+		*Push each tag into an array 
+		*/
 		for(var x = 0; x < images.length; x ++ ){
 
-			checkImage(images[x], function(exists, data){
+			var check = checkImage(images[x], function(exists, data){
 
 				if (exists){
-					imageLoad(data);
+					imageArray.push(imageLoad(data));
 				}else{
 					console.log('does not exist');
 				}
+
+				// some how pass array out 
+				// promise reolve here
 			});
+		};
 
-		}
-
-	}// end render image function
+	};// end render image function
 });

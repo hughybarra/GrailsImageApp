@@ -4,41 +4,13 @@
 ██║  ███╗███████║██║     ██║     █████╗  ██████╔╝ ╚████╔╝ 
 ██║   ██║██╔══██║██║     ██║     ██╔══╝  ██╔══██╗  ╚██╔╝  
 ╚██████╔╝██║  ██║███████╗███████╗███████╗██║  ██║   ██║   
- ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝   
-                                                          
-                                       
-                                        
+ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝                                                                                                                                       
 @author hugh Ybarra
 @contact hugh.ybarra@gmail.com                                                                   
 */
+
 // anon function
 $(function(){
-	/*
-	*Check Login 
-	*Function checksif the user is logged in
-	*/
-	var checkLogin = function(){
-		var ajaxUrl = 'http://localhost:8080/hyImageApp/authentication/checkLogin';
-
-		// get all image assets from the server
-		$.ajax({
-			type: "GET",
-			url: ajaxUrl,
-			dataType: 'json',
-			success: function(success){
-
-				if (success.success == true){
-					// user is logged in
-					// do some stuff here
-					$('.mainContainer').removeClass('hideContainer');
-				}else{
-					// user is not logged in
-					// redirect to the main page
-					window.location.href = '/hyImageApp/login';
-				}
-			},
-		})
-	}// end check login function
 
 	/*
 	*Builds the comments on the page 
@@ -49,7 +21,6 @@ $(function(){
 		commentPanel.empty();
 
 		for(var x = 0; x < comments.length; x ++){
-			console.log(comments[x]);
 
 			var commentDiv = 
 				'<div class="panel panel-default">'+
@@ -113,6 +84,9 @@ $(function(){
 				'id': imageId
 			};
 
+			// clear the form 
+			$('#formComment').val('');
+
 			// get all image assets from the server
 			$.ajax({
 				type: "POST",
@@ -122,8 +96,8 @@ $(function(){
 				success: function(success){
 
 					if (success.success == true){
-						// user is logged in
-						// do some stuff here
+						// reset the form
+
 						// reload the get comments function
 						getComments();
 
@@ -138,15 +112,12 @@ $(function(){
 		}else{
 			// enter a message into the comment
 		}
-
-
 		e.preventDefault();
 		e.stopPropagation();
 	});
 
 
 	// run check login function
-	// checkLogin();
 	getComments();
 
 });

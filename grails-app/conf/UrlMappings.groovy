@@ -28,7 +28,10 @@ class UrlMappings {
             controller = 'main'
             action = 'admin'
         }
-
+        '/testing'{
+            controller = 'main'
+            action = 'testing'
+        }
         
         "500"(view:'/error')
 	}

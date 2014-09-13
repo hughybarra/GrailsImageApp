@@ -11,40 +11,66 @@
 // anon function
 $(function() {
 
-	/*
-	*Check Login 
-	*Function checksif the user is logged in
+	/* 
+	*TOGGLE FORM FUNCTION
+	*==================================================
+	*==================================================
+	*==================================================
 	*/
-	var checkLogin = function(){
-		var ajaxUrl = '/hyImageApp/authentication/checkLogin';
 
-		// get all image assets from the server
-		$.ajax({
-			type: "GET",
-			url: ajaxUrl,
-			dataType: 'json',
-			success: function(success){
-				console.log(success);
+	/*
+	*Toggle file form
+	*/
+	$( "#fileFormToggle" ).click(function() {
 
-				if (success.success == true){
-					// user is logged in
-					// do some stuff here
-					$('.mainContainer').removeClass('hideContainer');
-				}else{
-					// user is not logged in
+		// if the other form is toggled hide it
+		if( $('#urlForm').is(":visible") ){
+			$('#urlForm').hide(); 
+		}
 
-					// redirect to the main page
-					window.location.href = '/hyImageApp/login';
-				}
-			},
-		})
-	}// end check login function
+  		$( "#UIForm" ).toggle( "fast", function() {
+    	// Animation complete.
+  		});
+	});
+	/*
+	*Toggle url form
+	*/
+	$( "#urlFormToggle" ).click(function() {
 
-	// checkLogin();
+		// if the other form is toggled hide it
+		if( $('#UIForm').is(":visible") ){
+			$('#UIForm').hide(); 
+		}
 
+  		$( "#urlForm" ).toggle( "fast", function() {
+    	// Animation complete.
+  		});
+	});
 
+	/* 
+	* Drag And Drop FORM FUNCTION
+	*==================================================
+	*==================================================
+	*==================================================
+	*/	
 
+	// Drag and drop stuff  goes here
 
+	/* 
+	* FILE UPLOAD FORM FUNCTION
+	*==================================================
+	*==================================================
+	*==================================================
+	*/	
+	
+	//Upload Image stuff goes here
+
+	/* 
+	*URL FORM FUNCTIONS
+	*==================================================
+	*==================================================
+	*==================================================
+	*/
 
 	/*
 	*This function checks the url provided to see if an image actually exists
@@ -79,7 +105,6 @@ $(function() {
 		});// end exists function
 	});
 
-	
 	/*
 	* URL INPUT
 	* Change Function
@@ -117,18 +142,10 @@ $(function() {
 		var newData = $('#hyFormCaption').val();
 		$('.panelCaptionText').text(newData);
 	});	
-	
-
 	/*
-	   _____       _               _ _   
-	  / ____|     | |             (_) |  
-	 | (___  _   _| |__  _ __ ___  _| |_ 
-	  \___ \| | | | '_ \| '_ ` _ \| | __|
-	  ____) | |_| | |_) | | | | | | | |_ 
-	 |_____/ \__,_|_.__/|_| |_| |_|_|\__|
-
+	*Submit Url
 	*/
-	$('#submitImage').click(function(e){
+	$('#submitUrlForm').click(function(e){
 		console.log('submitclicked');
 
 		// declaring vars
@@ -171,9 +188,11 @@ $(function() {
 			valid = false;
 			// error class
 			$('.titleDiv').addClass(errorClass);
+			$('.titleDiv').removeClass(validClass);
 		}else{
 			// remove error class
 			$('.titleDiv').addClass(validClass);
+			$('.titleDiv').removeClass(errorClass);
 
 		}
 
@@ -224,8 +243,6 @@ $(function() {
 		//prevent default behavior
 		e.preventDefault();
 		e.stopPropagation();
-
-
 	})// end new image submit function
 
 });

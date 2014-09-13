@@ -55,13 +55,6 @@
 
 		</div>
 
-
-
-
-
-
-
-		<g:applyLayout name="footer" />
 		<!-- main.js -->
 		<asset:javascript src="gallery/main.js"/>
 

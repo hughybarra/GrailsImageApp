@@ -12,7 +12,10 @@ class ImageRestController {
 	*Calls Image Rest service to create a new image
 	*/
 	def createImage(){
-		def success = imageRestService.createImage( session['userEmail'], params['url'], params['title'], params['caption'] )
+		// create new date 
+		def dateNow = new Date()
+
+		def success = imageRestService.createImage( session['userEmail'], params['url'], params['title'], params['caption'], dateNow )
 
 		render success as JSON
 	}
@@ -22,7 +25,9 @@ class ImageRestController {
 	*Grabs all imags from the Image Container instance 
 	*/
 	def getAll(){
-		def imageList = ImageContainer.getAll()
+		// def results = Book.list(max: 10, offset: 100, sort: "title", order: "desc")
+		def imageList = ImageContainer.list(sort:'date', order: 'desc')
+		// def imageList = ImageContainer.getAll()
 		render imageList as JSON
 	}
 
@@ -36,5 +41,4 @@ class ImageRestController {
 		render success as JSON
 
 	}
-
 }

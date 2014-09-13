@@ -12,7 +12,6 @@
 
 		</div>
 
-		<g:applyLayout name="footer" />
 		<!-- main.js -->
 		<asset:javascript src="admin/main.js"/>
 

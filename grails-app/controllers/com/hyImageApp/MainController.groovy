@@ -39,5 +39,16 @@ class MainController {
 
     }
 
+    def testing(){
+        def currentDate = new Date()
+
+        def data = [
+            'date': currentDate,
+            'format': currentDate.getDateTimeString()  
+        ]
+
+        render data as JSON
+    }
+
 }
 

@@ -13,10 +13,6 @@
 // anon function
 $(function(){
 
-	var attemptLogin = function(email, password){
-
-	};// end attempt login function
-
 	// login 
 	$('.loginButton').click(function(){
 		console.log('login clicked');
@@ -94,8 +90,6 @@ $(function(){
 		}else{
 			console.log('login was Invalid');
 		}
-
-		
 
 	});
 
@@ -216,7 +210,5 @@ $(function(){
 			console.log('form was not valid');
 		}
 
-
-
-	})
+	});
 });
