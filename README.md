@@ -33,7 +33,7 @@ Have a good one.
 
 clone the project
 
-`git clone http://localhost:8080/hyImageApp`
+`git clone https://github.com/hughybarra/GrailsImageApp.git`
 
 make sure you have a working version of grails 2.4.3
 
