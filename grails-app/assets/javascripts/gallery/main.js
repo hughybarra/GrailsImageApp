@@ -21,13 +21,13 @@ $(function(){
 		commentPanel.empty();
 
 
-		console.log(comments);
-		for(var x = 0; x < comments[0].length; x ++){
-
+		// console.log(comments);
+		for(var x = 0; x < comments.length; x ++){
+			console.log(comments[x]);
 			var commentDiv = 
 				'<div class="userComment panel panel-default">'+
 				 	'<div class="panel-body">'+
-				    	'<span>'+comments[0][x].user+'</span><p>'+comments[0][x].comment+'</p>'+
+				    	'<span>'+comments[x].user+'</span><p>'+comments[x].comment+'</p>'+
 				  	'</div>'+
 				'</div>';
 

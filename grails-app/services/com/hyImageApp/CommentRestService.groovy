@@ -63,15 +63,15 @@ class CommentRestService{
 		def response = []
 
 
-        def image = ImageContainer.list(sort:'_id', order: 'desc')
+        // def image = ImageContainer.list(sort:'_id', order: 'desc')
 		// grab comment by image id
-		// def image = ImageContainer.get(id)
+		def image = ImageContainer.get(id)
 		// loop over all of the comments 
 		for (comment in image.comments){
 
 			data.push(comment)
 		}
-		return  image.comments
+		return  data
 	}
 
 	def deleteComment(int id){

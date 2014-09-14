@@ -9,28 +9,34 @@
 	<body>
 
 
-		<div class="mainContainer hideContainer">
+		<div class="mainContainer hideContainer col-md-6 col-lg-12">
 
-			<div class="titleContainer panel panel-default col-lg-6 col-lg-offset-2 ">
-				<div class="col-lg-12 feature_title">
+			<div class="titleContainer panel panel-default col-lg-6 col-lg-offset-2 
+														   col-md- col-md-offset-">
+				<div class="feature_title col-lg-12">
+
 					<h3>${image.title}</h3>
+
 				</div>
 				
-				<img src="${image.url}" class="col-lg-12 img-thumbnail feature_image" id="${image.id}">
+				<img src="${image.url}" id="${image.id}" class="img-responsive img-thumbnail feature_image col-lg-12 
+																										   col-xs-12" >
 
-				<div class="col-lg-6 feature_about">
+				<div class="feature_about col-lg-6">
+										  
 					<p>${image.caption}</p>
 				</div>
 
 			</div>
 
-			<div class="inputPanel panel-default panel col-lg-6 col-lg-offset-2">
+			<div class="inputPanel panel-default panel col-lg-6 col-lg-offset-2
+													   col-xs-">
 
 
 
-				<form roll="form" class="col-lg-12 form-inli">
+				<form roll="form" class=" form-inli col-lg-12">
 
-					<div class="form-group col-lg-10">
+					<div class="form-group col-lg-10 ">
 						<input id="formComment" type="text" class="form-control" max-length="140" placeholder="Enter new Comment" class="col-lg-6">
 						
 					</div>
@@ -44,8 +50,6 @@
 
 			<div class="panel panel-default col-lg-6 col-lg-offset-2 commentsPanel">
 
-
-		
 			</div>
 
 		</div>

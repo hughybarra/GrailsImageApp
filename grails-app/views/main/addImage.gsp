@@ -16,7 +16,10 @@
 			<div class="formsContainer">
 
 
-				<div class="formsToggle col-lg-3">
+				<div class="formsToggle col-lg-3
+										">
+
+
 					<button id="fileFormToggle" type="button" class="btn btn-primary btn-lg col-lg-12 text-left formToggleButton">
 						<span class="glyphicon glyphicon-link"></span> Browse Your Computer
 					</button>

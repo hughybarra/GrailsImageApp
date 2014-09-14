@@ -9,9 +9,11 @@
 	<body>
 
 
-		<section class="Imagesection col-lg-12">
+		<section class="Imagesection col-lg-12
+									 col-md-12">
 
-			<div class="imageDiv col-lg-12">
+			<div class="imageDiv col-lg-12 
+								 col-md-12">
 			</div>
 
 		</section>

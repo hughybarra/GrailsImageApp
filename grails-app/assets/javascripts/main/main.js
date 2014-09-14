@@ -45,7 +45,7 @@ $(function(){
 		var imageLoad = function(data){
 			var linkUrl = 'gallery/';
 			var imageContainer = 
-				'<div class="imageContainer col-lg-2">'+
+				'<div class="imageContainer col-lg-2 col-md-3 col-sm-3 col-xs-12">'+
 					'<a href="'+linkUrl+data.id+'"><img src="'+data.url+'" class="img-responsive img-rounded"></a>'+
 				'</div>'
 				;

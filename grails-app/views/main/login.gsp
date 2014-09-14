@@ -18,7 +18,10 @@
 
 		<section class="mainContainer">
 
-			<form role="form" class="col-lg-3 col-lg-offset-3 loginForm" >
+			<form role="form" class="loginForm col-lg-3 col-lg-offset-3 
+											   col-md-3 col-md-offset-3
+											   col-sm-3 col-sm-offset-3
+											   col-xs-8 col-xs-offset-2" >
 
 
 				<h3> Login </h3>
@@ -37,7 +40,10 @@
 			</form>
 
 
-			<form role="form" class="col-lg-3 signUpForm">
+			<form role="form" class="signUpForm col-lg-3 col-lg-offset-0
+												col-md-3 col-md-offset-0
+												col-sm-3 col-sm-offset-0
+												col-xs-8 col-xs-offset-2">
 
 				<h3>Sign Up</h3>
 
