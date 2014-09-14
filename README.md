@@ -29,4 +29,20 @@ thank you for taking the time to check out my project. shoot me an email if you 
 
 Have a good one. 
 
+###Instructions
+
+clone the project
+
+`git clone http://localhost:8080/hyImageApp`
+
+make sure you have a working version of grails 2.4.3
+
+make sure you have mongoDB installed. If installed go ahead and launch mongodb
+
+`mongod`
+
+cd into the grails project directory and run the app 
+
+`grails run-app`
+
 
