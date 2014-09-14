@@ -37,12 +37,15 @@ clone the project
 
 make sure you have a working version of grails 2.4.3
 
-make sure you have mongoDB installed. If installed go ahead and launch mongodb
+make sure you have mongoDB installed, I'm using 2.6.4. If installed go ahead and launch mongodb
 
 `mongod`
 
 cd into the grails project directory and run the app 
 
 `grails run-app`
+
+If it works correctly you will have an instance of the application running on your local machine. 
+more to be added later
 
 
